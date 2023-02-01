@@ -42,6 +42,7 @@ class ChirpPolicy
     public function create(User $user)
     {
         //
+        return $user->id === auth()->id();
     }
 
     /**
@@ -54,6 +55,7 @@ class ChirpPolicy
     public function update(User $user, Chirp $chirp)
     {
         //
+        return $user->id === $chirp->user_id;
     }
 
     /**

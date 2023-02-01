@@ -42,6 +42,7 @@ class ChirpController extends Controller
     public function store(StoreChirpRequest $request)
     {
         //
+        $this->authorize('create', Chirp::class);
 
         $chirp = $request->user()->chirps()->create($request->validated());
 
@@ -82,6 +83,13 @@ class ChirpController extends Controller
     public function update(UpdateChirpRequest $request, Chirp $chirp)
     {
         //
+        $this->authorize('update', $chirp);
+        $validated = $request->validated();
+        $updated = $chirp->update($validated);
+
+        if ($updated) {
+            return redirect()->route('chirps.index');
+        }
     }
 
     /**

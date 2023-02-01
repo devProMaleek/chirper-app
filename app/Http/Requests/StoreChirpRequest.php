@@ -13,8 +13,7 @@ class StoreChirpRequest extends FormRequest
      */
     public function authorize()
     {
-        $user = $this->user();
-        return $user->id === auth()->id();
+        return true;
     }
 
     /**
@@ -25,6 +24,7 @@ class StoreChirpRequest extends FormRequest
     public function rules()
     {
         return [
+            //
             'message' => 'required|string|max:255',
         ];
     }
