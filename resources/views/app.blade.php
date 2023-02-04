@@ -18,7 +18,6 @@
     </head>
     <body class="font-sans antialiased">
         @inertia
-        @notify
         @notifyJs
     </body>
 </html>
