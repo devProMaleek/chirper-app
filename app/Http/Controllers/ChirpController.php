@@ -48,6 +48,7 @@ class ChirpController extends Controller
 
         if ($chirp) {
             return redirect()->route('chirps.index');
+            notify()->success('Chirp created successfully ⚡️');
         }
     }
 
@@ -89,6 +90,7 @@ class ChirpController extends Controller
 
         if ($updated) {
             return redirect()->route('chirps.index');
+            notify()->success('Chirp updated successfully ⚡️');
         }
     }
 
@@ -106,6 +108,7 @@ class ChirpController extends Controller
 
         if ($deleted) {
             return redirect()->route('chirps.index');
+            notify()->success('Chirp deleted successfully ⚡️');
         }
     }
 }

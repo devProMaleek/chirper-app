@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        @notifyCss
 
         <!-- Scripts -->
         @routes
@@ -17,5 +18,7 @@
     </head>
     <body class="font-sans antialiased">
         @inertia
+        @notify
+        @notifyJs
     </body>
 </html>
